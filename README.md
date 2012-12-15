@@ -16,7 +16,7 @@ Once that's done, add the following line to your project's `grunt.js`
 file.
 
 ```js
-grunt.loadNpmTasks('roy');
+grunt.loadNpmTasks('grunt-roy');
 ```
 
 If the plugin has been installed correctly, running `grunt --help` at
