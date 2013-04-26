@@ -2,13 +2,14 @@ module.exports = function(grunt){
   'use strict';
 
   grunt.registerMultiTask('roy', 'compiles roy files', function(){
-    var src = this.file.src
-      , dest = this.file.dest
-      , options = this.data.options
+    var files = this.files
+      , options = this.data.options || {}
     ;
-    return grunt.file.expandFiles(src).reduce(function(b, a){
-      var os = grunt.utils._.clone(options || {});
-      return b && compile(a, dest, os);
+    return files.reduce(function(a, file){
+      return a && file.src.reduce(function(b, src){
+        var os = grunt.util._.clone(options);
+        return b && compile(src, file.dest, os);
+      }, true);
     }, true);
   });
 
