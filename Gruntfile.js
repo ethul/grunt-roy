@@ -2,17 +2,15 @@ module.exports = function(grunt){
   'use strict';
 
   grunt.initConfig({
-    test: {
-      files: ['test/**/*.js']
+    nodeunit: {
+      tests: ['test/**/*.js']
     },
-    lint: {
+    jshint: {
       files: [
         'grunt.js',
         'tasks/**/*.js',
         'test/**/*.js'
-      ]
-    },
-    jshint: {
+      ],
       options: {
         bitwise: true,
         curly: true,
@@ -35,5 +33,7 @@ module.exports = function(grunt){
     }
   });
   grunt.loadTasks('tasks');
-  grunt.registerTask('default', 'lint test');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.registerTask('default', ['jshint', 'nodeunit']);
 };

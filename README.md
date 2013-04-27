@@ -5,14 +5,14 @@ Invokes the [Roy](http://roy.brianmckenna.org/) compiler through
 functional programming language that compiles to JavaScript.
 
 ## Getting Started
-From the same directory as your project's `grunt.js` and `package.json`
+From the same directory as your project's `Gruntfile.js` and `package.json`
 file, install this plugin with the following command.
 
 ```bash
 npm install grunt-roy --save-dev
 ```
 
-Once that's done, add the following line to your project's `grunt.js`
+Once that's done, add the following line to your project's `Gruntfile.js`
 file.
 
 ```js
@@ -77,7 +77,7 @@ Default value: `false`
 
 A Boolean value that when true will not wrap the compiled JavaScript in
 an immediately-invoked function expression. Additionally, Roy's `export`
-keyword will map to the Nodejs `exports` object. The following is an 
+keyword will map to the Nodejs `exports` object. The following is an
 example.
 
 ```roy
