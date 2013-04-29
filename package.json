@@ -1,7 +1,7 @@
 {
   "name": "grunt-roy",
   "description": "Compiles Roy to JavaScript",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/ethul/grunt-roy",
   "author": {
     "name": "Eric",
@@ -25,7 +25,7 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "postinstall": "(pushd node_modules/roy && make deps && make && popd) &>/dev/null"
+    "postinstall": "(cd node_modules/roy && make deps && make && cd ../../) &>/dev/null"
   },
   "dependencies": {
     "source-map": "~0.1.8",
