@@ -1,7 +1,7 @@
 {
   "name": "grunt-roy",
   "description": "Compiles Roy to JavaScript",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "homepage": "https://github.com/ethul/grunt-roy",
   "author": {
     "name": "Eric",
