@@ -38,7 +38,7 @@ exports.roy = {
       , _ = (function(){
           that.fs = {};
           that.fs[srcroy] = 'let a = "hello"';
-          that.fs[destjs] = '(function() {\nvar a = "hello";\n})();\n';
+          that.fs[destjs] = '(function () {\n    var a = \'hello\';\n}());';
         }())
       , res = this.compile(outdir, srcroy, destjs, {})
     ;
@@ -55,7 +55,7 @@ exports.roy = {
       , _ = (function(){
           that.fs = {};
           that.fs[srcroy] = 'let a = "hello"';
-          that.fs[destjs] = '(function() {\nvar a = "hello";\n})();\n';
+          that.fs[destjs] = '(function () {\n    var a = \'hello\';\n}());';
         }())
       , res = this.compile(outdir, srcroy, destjs, {})
     ;
@@ -75,18 +75,11 @@ exports.roy = {
           that.fs = {};
           that.fs[srcroy] = 'let a = "hello"\nlet b = "world"\nlet c = "test"';
           that.fs[destjs] =
-            '(function() {\n'      +
-              'var a = "hello";\n' +
-              'var b = "world";\n' +
-              'var c = "test";\n'  +
-            '})();\n//@ sourceMappingURL=a.js.map\n'
-          ;
-          that.fs[destmap] =
-            '{"version":3,"file":"a.js",' +
-              '"sources":["a.roy"],'      +
-              '"names":[],'               +
-              '"mappings":";;;AACA"}'
-          ;
+            '(function () {\n' +
+            '    var a = \'hello\';\n' +
+            '    var b = \'world\';\n' +
+            '    var c = \'test\';\n}());//@ sourceMappingURL=a.js.map\n';
+          that.fs[destmap] = '{"version":3,"file":"a.js","sources":[],"names":[],"mappings":""}';
         }())
       , res = this.compile(outdir, srcroy, destjs, {
           sourceMap: true
@@ -109,7 +102,11 @@ exports.roy = {
       , _ = (function(){
           that.fs = {};
           that.fs[srcroy] = 'let a = "hello"';
-          that.fs[destjs] = '(function() {\n"use strict";\nvar a = "hello";\n})();\n';
+          that.fs[destjs] =
+            '\'use strict\';\n' +
+            '(function () {\n' +
+            '    var a = \'hello\';\n' +
+            '}());';
         }())
       , res = this.compile(outdir, srcroy, destjs, {
           strict: true
@@ -128,7 +125,7 @@ exports.roy = {
       , _ = (function(){
           that.fs = {};
           that.fs[srcroy] = 'let a = "hello"';
-          that.fs[destjs] = 'var a = "hello";\n';
+          that.fs[destjs] = 'var a = \'hello\';';
         }())
       , res = this.compile(outdir, srcroy, destjs, {
           nodejs: true
