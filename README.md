@@ -4,6 +4,12 @@ Invokes the [Roy](http://roy.brianmckenna.org/) compiler through
 [Grunt](http://gruntjs.com). [Roy](http://roy.brianmckenna.org/) is a
 functional programming language that compiles to JavaScript.
 
+The [roy package](https://npmjs.org/package/roy) is not listed as a
+dependency for this package. Therefore, you must have it installed
+before using this Grunt plugin. Note that it is recommended to use the
+version of Roy specified in the `devDependencies` of this package, but
+other versions may also work.
+
 ## Getting Started
 From the same directory as your project's `Gruntfile.js` and `package.json`
 file, install this plugin with the following command.
